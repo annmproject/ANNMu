@@ -1,11 +1,11 @@
 # ANNMu - C++ web framework
 ## Benefits
-- absolute performance<br />
+- **absolute performance**<br />
 15x faster than Nette<br />
-- security<br />
+- **security**<br />
 all code is tested<br />
 app is compiled <br />
-- well architectured <br />
+- **well architectured** <br />
 well known MVC architecture<br />
 
 ## Depencies
