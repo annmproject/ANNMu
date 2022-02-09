@@ -1,0 +1,45 @@
+#
+# Access
+# It's very important setting because root directory denies all requests.
+#
+
+Require all granted
+
+
+#
+# default index pages
+#
+
+DirectoryIndex first.html index.htm index.html index.cgi
+
+
+#
+# Directory listing
+#
+
+<IfModule mod_autoindex.c>
+	Options -Indexes
+</IfModule>
+
+
+#
+# Pretty url
+#
+
+<IfModule mod_rewrite.c>
+
+	RewriteEngine On
+
+    # base url
+	# RewriteBase /
+
+	# use HTTPS
+	# RewriteCond %{HTTPS} !on
+	# RewriteRule .? https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+	# front controller
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.cgi?$1 [QSA,L]
+
+</IfModule>
