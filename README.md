@@ -1,5 +1,12 @@
-# cANNMu
-Vytvořil jsem novou složku, jelikož jsem vše překopal, stará je schovaná a zazálohovaná pro případ potřeby
+# ANNMu - C++ web framework
+## Benefits
+- absolute performance<br />
+15x faster than Nette<br />
+- security<br />
+all code is tested<br />
+app is compiled <br />
+- well architectured <br />
+well known MVC architecture<br />
 
 ## Depencies
 Everything should be made as simple as possible.
