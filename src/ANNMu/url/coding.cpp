@@ -37,11 +37,15 @@ namespace annmu {
          * 
          */
 
-        std::string Coding::decode(const char *str) {
+        std::string Coding::decode(const char * str) {
 
             std::string result;
             std::size_t i, len;
             
+            if(str == NULL) {
+                return result;
+            }
+
             len = strlen(str);
 
             for(i = 0; i < len; i++) {
@@ -73,7 +77,11 @@ namespace annmu {
 
             std::string result;
             std::size_t i, len;
-
+            
+            if(str == NULL) {
+                return result;
+            }
+            
             len = strlen(str);
 
             for(i = 0; i < len; i++) {
@@ -81,9 +89,11 @@ namespace annmu {
                 if(str[i] < 'A' || str[i] > 'Z') {
                     if(str[i] < 'a' || str[i] > 'z') {
                         if(str[i] < '0' || str[i] > '9') {
-                            result += '%';
-                            result += Coding::charToHex(str[i]);
-                            continue;
+                            if(str[i] != '.') {
+                                result += '%';
+                                result += Coding::charToHex(str[i]);
+                                continue;
+                            }
                         }
                     }
                 }

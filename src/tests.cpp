@@ -33,6 +33,7 @@
 #include <tests/log/log.hpp>
 #include <tests/form/simple.hpp>
 #include <tests/routing/router.hpp>
+#include <tests/url/coding.hpp>
 
 
 int main(void) {
@@ -44,6 +45,7 @@ int main(void) {
     tests::log::Log::run();
     tests::form::Simple::run();
     tests::routing::Router::run();
+    tests::url::Coding::run();
 
     return 0;
 
