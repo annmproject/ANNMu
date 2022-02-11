@@ -55,6 +55,7 @@ set(
     ./src/tests/config/config.cpp
     ./src/tests/log/log.cpp
     ./src/tests/form/simple.cpp
+    ./src/tests/routing/router.cpp
 )
 
 

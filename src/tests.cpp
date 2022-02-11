@@ -32,6 +32,8 @@
 #include <tests/config/config.hpp>
 #include <tests/log/log.hpp>
 #include <tests/form/simple.hpp>
+#include <tests/routing/router.hpp>
+
 
 int main(void) {
 
@@ -41,6 +43,7 @@ int main(void) {
     tests::config::Config::run();
     tests::log::Log::run();
     tests::form::Simple::run();
+    tests::routing::Router::run();
 
     return 0;
 

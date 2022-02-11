@@ -85,9 +85,13 @@ namespace annmu {
 
         web::controllers::controllerList Router::getControllerID(annmu::http::method method, const char *query) {
             
+            if(query == NULL) {
+                return web::controllers::UNKNOWN;
+            }
+
             for(std::size_t i = 0; i < this->mRoutes.size(); i++) {
                 if((this->mRoutes[i].methods & method) > 0) {
-                    if(std::regex_match(query ? query : "", this->mRoutes[i].regex)) {
+                    if(std::regex_match(query, this->mRoutes[i].regex)) {
                         return this->mRoutes[i].controllerID;
                     }
                 }

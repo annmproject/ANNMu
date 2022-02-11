@@ -36,7 +36,10 @@ namespace web {
     namespace controllers {
 
         enum controllerList : int {
-            UNKNOWN = 0,
+            UNKNOWN = 0,            // do not touch
+            TESTS_1 = 1,            // do not touch
+            TESTS_2 = 2,            // do not touch
+            TESTS_3 = 3,            // do not touch
             CONTROLLER_HOMEPAGE,
             CONTROLLER_NEWS,
             CONTROLLER_CONTACT
