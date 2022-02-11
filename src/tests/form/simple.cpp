@@ -45,6 +45,13 @@ namespace tests {
             puts(Simple::test4() ? "\x1b[32mTest  4 passed!\x1b[0m" : "\x1b[31mTest  4 failed!\x1b[0m");
             puts(Simple::test5() ? "\x1b[32mTest  5 passed!\x1b[0m" : "\x1b[31mTest  5 failed!\x1b[0m");
             puts(Simple::test6() ? "\x1b[32mTest  6 passed!\x1b[0m" : "\x1b[31mTest  6 failed!\x1b[0m");
+            puts(Simple::test7() ? "\x1b[32mTest  7 passed!\x1b[0m" : "\x1b[31mTest  7 failed!\x1b[0m");
+            puts(Simple::test8() ? "\x1b[32mTest  8 passed!\x1b[0m" : "\x1b[31mTest  8 failed!\x1b[0m");
+            puts(Simple::test9() ? "\x1b[32mTest  9 passed!\x1b[0m" : "\x1b[31mTest  9 failed!\x1b[0m");
+            puts(Simple::test10() ? "\x1b[32mTest 10 passed!\x1b[0m" : "\x1b[31mTest 10 failed!\x1b[0m");
+            puts(Simple::test11() ? "\x1b[32mTest 11 passed!\x1b[0m" : "\x1b[31mTest 11 failed!\x1b[0m");
+            puts(Simple::test12() ? "\x1b[32mTest 12 passed!\x1b[0m" : "\x1b[31mTest 12 failed!\x1b[0m");
+            puts(Simple::test13() ? "\x1b[32mTest 13 passed!\x1b[0m" : "\x1b[31mTest 13 failed!\x1b[0m");
 
         }
 
@@ -228,6 +235,236 @@ namespace tests {
 
         }
 
+
+        /*
+         *
+         * Test 7
+         * 
+         */
+
+        bool Simple::test7() {
+
+            try {
+                
+                istringstream input("key1=value1");
+
+                std::cin.clear();
+                cin.rdbuf(input.rdbuf());
+
+                annmu::http::Request request("POST", "off", NULL, "application/x-www-form-urlencoded", "13");
+                annmu::form::Simple form(&request);
+
+                if(!form.existKey("key")) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+
+            }
+            catch(std::exception &e) {
+                return false;
+            }
+
+        }
+
+
+        /*
+         *
+         * Test 8
+         * 
+         */
+
+        bool Simple::test8() {
+
+            try {
+                
+                istringstream input("key2=value2&key1=value1");
+
+                std::cin.clear();
+                cin.rdbuf(input.rdbuf());
+
+                annmu::http::Request request("POST", "off", NULL, "application/x-www-form-urlencoded", "25");
+                annmu::form::Simple form(&request);
+
+                if(!form.existKey("key")) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+
+            }
+            catch(std::exception &e) {
+                return false;
+            }
+
+        }
+
+
+        /*
+         *
+         * Test 9
+         * 
+         */
+
+        bool Simple::test9() {
+
+            try {
+                
+                istringstream input("key=value");
+
+                std::cin.clear();
+                cin.rdbuf(input.rdbuf());
+
+                annmu::http::Request request("POST", "off", NULL, "application/x-www-form-urlencoded", "11");
+                annmu::form::Simple form(&request);
+
+                if(strcmp(form.getValue("key"), "value") == 0) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+
+            }
+            catch(std::exception &e) {
+                return false;
+            }
+
+        }
+
+
+        /*
+         *
+         * Test 10
+         * 
+         */
+
+        bool Simple::test10() {
+
+            try {
+                
+                istringstream input("key=value&key1=value1");
+
+                std::cin.clear();
+                cin.rdbuf(input.rdbuf());
+
+                annmu::http::Request request("POST", "off", NULL, "application/x-www-form-urlencoded", "22");
+                annmu::form::Simple form(&request);
+
+                if(strcmp(form.getValue("key"), "value") == 0) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+
+            }
+            catch(std::exception &e) {
+                return false;
+            }
+
+        }
+
+
+        /*
+         *
+         * Test 11
+         * 
+         */
+
+        bool Simple::test11() {
+
+            try {
+                
+                istringstream input("key=value&key1=value1");
+
+                std::cin.clear();
+                cin.rdbuf(input.rdbuf());
+
+                annmu::http::Request request("POST", "off", NULL, "application/x-www-form-urlencoded", "23");
+                annmu::form::Simple form(&request);
+
+                if(strcmp(form.getValue("key1"), "value1") == 0) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+
+            }
+            catch(std::exception &e) {
+                return false;
+            }
+
+        }
+
+
+        /*
+         *
+         * Test 12
+         * 
+         */
+
+        bool Simple::test12() {
+
+            try {
+                
+                istringstream input("key=value");
+
+                std::cin.clear();
+                cin.rdbuf(input.rdbuf());
+
+                annmu::http::Request request("POST", "off", NULL, "application/x-www-form-urlencoded", "11");
+                annmu::form::Simple form(&request);
+
+                if(strcmp(form.getValue("key1"), "") == 0) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+
+            }
+            catch(std::exception &e) {
+                return false;
+            }
+
+        }
+
+
+        /*
+         *
+         * Test 13
+         * 
+         */
+
+        bool Simple::test13() {
+
+            try {
+                
+                istringstream input("key=value&key1=value1");
+
+                std::cin.clear();
+                cin.rdbuf(input.rdbuf());
+
+                annmu::http::Request request("POST", "off", NULL, "application/x-www-form-urlencoded", "23");
+                annmu::form::Simple form(&request);
+
+                if(strcmp(form.getValue("key2"), "") == 0) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+
+            }
+            catch(std::exception &e) {
+                return false;
+            }
+
+        }
 
 
     }

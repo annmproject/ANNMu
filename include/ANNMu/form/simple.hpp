@@ -56,7 +56,7 @@ namespace annmu {
                  * 
                  * @brief The construct parses the data from standard input.
                  * 
-                 * @param request It's the shared pointer to the request object.
+                 * @param request It's the pointer to the request object.
                  * 
                  */
 

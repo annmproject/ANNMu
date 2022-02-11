@@ -73,7 +73,7 @@ namespace tests {
                  * data from standard input.
                  * 
                  * @note In this case the static method tests processing of the 
-                 * input containing single key/value.
+                 * input containing single key/value data.
                  * 
                  * @return The static method returns true if the test was 
                  * successful, otherwise false.
@@ -103,8 +103,8 @@ namespace tests {
                  * 
                  * @brief The static method tests existKey().
                  * 
-                 * @note In this case the static method tests processing of the 
-                 * input containing sigle key/value.
+                 * @note In this case the static method tests existence of the 
+                 * valid key in single key/value data.
                  * 
                  * @return The static method returns true if the test was 
                  * successful, otherwise false.
@@ -118,8 +118,8 @@ namespace tests {
                  * 
                  * @brief The static method tests existKey().
                  * 
-                 * @note In this case the static method tests processing of the 
-                 * input containing multiple key/value data.
+                 * @note In this case the static method tests existence of the 
+                 * valid key in multiple key/value data.
                  * 
                  * @return The static method returns true if the test was 
                  * successful, otherwise false.
@@ -133,8 +133,8 @@ namespace tests {
                  * 
                  * @brief The static method tests existKey().
                  * 
-                 * @note In this case the static method tests processing of the 
-                 * input containing multiple key/value data.
+                 * @note In this case the static method tests existence of the 
+                 * valid key in multiple key/value data.
                  * 
                  * @return The static method returns true if the test was 
                  * successful, otherwise false.
@@ -142,6 +142,112 @@ namespace tests {
                  */
 
                 static bool test6();
+
+
+                /**
+                 * 
+                 * @brief The static method tests existKey().
+                 * 
+                 * @note In this case the static method tests existence of the 
+                 * invalid key in singe key/value data.
+                 * 
+                 * @return The static method returns true if the test was 
+                 * successful, otherwise false.
+                 * 
+                 */
+
+                static bool test7();
+
+
+                /**
+                 * 
+                 * @brief The static method tests existKey().
+                 * 
+                 * @note In this case the static method tests existence of the 
+                 * invalid key in multiple key/value data.
+                 * 
+                 * @return The static method returns true if the test was 
+                 * successful, otherwise false.
+                 * 
+                 */
+
+                static bool test8();
+
+
+                /**
+                 * 
+                 * @brief The static method tests getValue().
+                 * 
+                 * @note In this case the static method tests returning 
+                 * existent value from single key/value data.
+                 * 
+                 * @return The static method returns true if the test was 
+                 * successful, otherwise false.
+                 * 
+                 */
+
+                static bool test9();
+
+
+                /**
+                 * 
+                 * @brief The static method tests getValue().
+                 * 
+                 * @note In this case the static method tests returning 
+                 * existent value from multiple key/value data.
+                 * 
+                 * @return The static method returns true if the test was 
+                 * successful, otherwise false.
+                 * 
+                 */
+
+                static bool test10();
+
+
+                /**
+                 * 
+                 * @brief The static method tests getValue().
+                 * 
+                 * @note In this case the static method tests returning 
+                 * existent value from multiple key/value data.
+                 * 
+                 * @return The static method returns true if the test was 
+                 * successful, otherwise false.
+                 * 
+                 */
+
+                static bool test11();
+
+
+                /**
+                 * 
+                 * @brief The static method tests getValue().
+                 * 
+                 * @note In this case the static method tests returning 
+                 * nonexistent value from singe key/value data.
+                 * 
+                 * @return The static method returns true if the test was 
+                 * successful, otherwise false.
+                 * 
+                 */
+
+                static bool test12();
+
+
+                /**
+                 * 
+                 * @brief The static method tests getValue().
+                 * 
+                 * @note In this case the static method tests returning 
+                 * nonexistent value from multiple key/value data.
+                 * 
+                 * @return The static method returns true if the test was 
+                 * successful, otherwise false.
+                 * 
+                 */
+
+                static bool test13();
+
 
         };
 
