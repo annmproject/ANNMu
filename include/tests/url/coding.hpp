@@ -191,7 +191,7 @@ namespace tests {
                  * @brief The static method tests encode().
                  * 
                  * @note In this case The static method tests encoding of
-                 * normal array sith special chars array.
+                 * normal array with special chars.
                  * 
                  * @return The static method returns true if the test was 
                  * successful, otherwise false.
@@ -206,7 +206,7 @@ namespace tests {
                  * @brief The static method tests encode().
                  * 
                  * @note In this case The static method tests encoding of
-                 * normal array sith special chars array.
+                 * normal array with special chars.
                  * 
                  * @return The static method returns true if the test was 
                  * successful, otherwise false.
@@ -221,7 +221,7 @@ namespace tests {
                  * @brief The static method tests decode().
                  * 
                  * @note In this case The static method tests decoding of
-                 * normal array sith special chars array.
+                 * normal array with special chars.
                  * 
                  * @return The static method returns true if the test was 
                  * successful, otherwise false.
