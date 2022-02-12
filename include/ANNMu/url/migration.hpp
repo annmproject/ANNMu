@@ -27,6 +27,7 @@
 #ifndef ANNMu_URL_MIGRATION_HPP
 #define ANNMu_URL_MIGRATION_HPP
 
+#include <stdexcept>
 #include <fstream>
 #include <string>
 #include <cstring>
@@ -53,8 +54,8 @@ namespace annmu {
                  * client's request exists.
                  * 
                  * @param path It's the path to the migration file.
-                 * @param log It's the pointer to the log object.
-                 * @param url It's the pointer to the url object.
+                 * @param query It's the pointer to the array what contains
+                 * client's query
                  * 
                  * @return The static method returns the string what contains 
                  * the new address if the new address exists, otherwise it 
@@ -64,8 +65,7 @@ namespace annmu {
                 
                 static std::string newAddress(
                     const char * path, 
-                    annmu::log::Log * log, 
-                    annmu::url::Url * url
+                    const char * query
                 );
 
 

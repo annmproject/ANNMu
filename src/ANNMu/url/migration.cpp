@@ -37,16 +37,15 @@ namespace annmu {
          * 
          */
 
-        std::string Migration::newAddress(const char * path, annmu::log::Log * log, annmu::url::Url * url) {
+        std::string Migration::newAddress(const char * path, const char * query) {
             
             std::ifstream file(path, std::ifstream::in);
-            std::string query = annmu::url::Coding::decode(url->getQuery());
+            std::string str = annmu::url::Coding::decode(query);
             std::string line;
             std::size_t pos;
 
             if(!file.is_open()) {
-                log->add(annmu::log::LOG_WARNING, "The migration function cannot open migration configuration file!");
-                return std::string();
+                throw std::runtime_error("The migration function cannot open migration configuration file!");
             }
 
             while(std::getline(file, line)) {
@@ -59,7 +58,7 @@ namespace annmu {
                     continue;
                 }
 
-                if(line.substr(0, pos).compare(query) == 0) {
+                if(line.substr(0, pos).compare(str) == 0) {
                     return line.substr(pos + 3, line.size());
                 }
 

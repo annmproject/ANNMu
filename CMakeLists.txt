@@ -57,6 +57,7 @@ set(
     ./src/tests/form/simple.cpp
     ./src/tests/routing/router.cpp
     ./src/tests/url/coding.cpp
+    ./src/tests/url/migration.cpp
 )
 
 

@@ -46,8 +46,9 @@
 #include <mysql_connection.h>
 #include <cppconn/driver.h>
 
-#include <ANNMu/form/simple.hpp> // navic pak umazat
 
+//https://github.com/laravel/laravel/blob/9.x/lang/en/pagination.php
+//https://stackoverflow.com/questions/2262386/generate-sha256-with-openssl-and-c
 
 int main(void) {
 
@@ -146,11 +147,16 @@ int main(void) {
 
     // url migration
     if(strcmp(config.getSetting("urlMigration"), "1") == 0) {
-        std::string newUrl = annmu::url::Migration::newAddress("url.config", &log, &url);
-        if(!newUrl.empty()) {
-            std::cout << "Status: " << annmu::http::STATUS_301_MOVED_PERMANENTLY << "\n";
-            std::cout << "Location: " << url.getBase() << "/" << newUrl << "\n\n";
-            return 0;
+        try {
+            std::string newUrl = annmu::url::Migration::newAddress("url.config", url.getQuery());
+            if(!newUrl.empty()) {
+                std::cout << "Status: " << annmu::http::STATUS_301_MOVED_PERMANENTLY << "\n";
+                std::cout << "Location: " << url.getBase() << "/" << newUrl << "\n\n";
+                return 0;
+            }
+        }
+        catch(std::exception & e) {
+            log.add(annmu::log::LOG_WARNING, e.what());
         }
     }
 
