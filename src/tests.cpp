@@ -35,6 +35,7 @@
 #include <tests/routing/router.hpp>
 #include <tests/url/coding.hpp>
 #include <tests/url/migration.hpp>
+#include <tests/url/url.hpp>
 
 int main(void) {
 
@@ -47,6 +48,7 @@ int main(void) {
     tests::routing::Router::run();
     tests::url::Coding::run();
     tests::url::Migration::run();
+    tests::url::Url::run();
 
     return 0;
 

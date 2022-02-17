@@ -38,7 +38,7 @@ namespace tests {
 
         class Migration {
 
-             public:
+            public:
 
                 /**
                  * 

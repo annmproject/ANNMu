@@ -37,42 +37,37 @@ namespace annmu {
          * 
          */
 
-        Url::Url(const char * protocol, const char * domain, const char * scriptPath, const char * query) : mDomain(domain ? domain : ""), mQuery(query ? query : 0) {
+        Url::Url(const char * protocol, const char * domain, const char * scriptPath, const char * query) : mDomain(domain ? domain : ""), mQuery(query ? query : "") {
             
             std::size_t prev = 0, curr;
-            std::string path = std::string(scriptPath);
+            std::string path = std::string(scriptPath ? scriptPath : "");
 
             this->mData.reserve(128);
             this->mParameters.reserve(4);
 
             // base url
             this->mBase = this->mData.size();
-            if(domain) {
-                if(protocol && strcmp(protocol, "on") == 0) {
-                    this->mData += "https://"; 
-                }
-                else {
-                    this->mData += "http://"; 
-                }
-                this->mData += domain;
-                if(scriptPath) {
-                    this->mData += std::string(scriptPath).substr(0, path.find_last_of("/")); 
-                }
+            if(protocol && strcmp(protocol, "on") == 0) {
+                this->mData += "https://"; 
             }
+            else {
+                this->mData += "http://"; 
+            }
+            this->mData += this->mDomain; 
+            this->mData += path.substr(0, path.find_last_of("/")); 
             this->mData += '\0';
 
             // parameters
-            if(strlen(query) > 0) {
-                prev = this->mData.size();
-                this->mData += query;
-                this->mData += '\0';
-                while((curr = this->mData.find('/', prev)) != std::string::npos) {
-                    this->mParameters.push_back(prev);
-                    this->mData[curr] = '\0';
-                    prev = curr + 1;
-                }
+            prev = this->mData.size();
+            this->mData += this->mQuery;
+            this->mData += '\0';
+            while((curr = this->mData.find('/', prev)) != std::string::npos) {
                 this->mParameters.push_back(prev);
+                this->mData[curr] = '\0';
+                prev = curr + 1;
             }
+            this->mParameters.push_back(prev);
+
 
         }
 
