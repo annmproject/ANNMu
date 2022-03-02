@@ -24,34 +24,28 @@
  *
  */
 
-#include <iostream>
+#include <ANNMu/form/utils.hpp>
 
-#include <tests/http/request.hpp>
-#include <tests/http/response.hpp>
-#include <tests/http/client.hpp>
-#include <tests/config/config.hpp>
-#include <tests/log/log.hpp>
-#include <tests/form/simple.hpp>
-#include <tests/form/utils.hpp>
-#include <tests/routing/router.hpp>
-#include <tests/url/coding.hpp>
-#include <tests/url/migration.hpp>
-#include <tests/url/url.hpp>
 
-int main(void) {
+namespace annmu {
 
-    tests::http::Request::run();
-    tests::http::Response::run();
-    tests::http::Client::run();
-    tests::config::Config::run();
-    tests::log::Log::run();
-    tests::form::Simple::run();
-    tests::form::Utils::run();
-    tests::routing::Router::run();
-    tests::url::Coding::run();
-    tests::url::Migration::run();
-    tests::url::Url::run();
+    namespace form {
 
-    return 0;
+        /*
+         * 
+         * is Email
+         * 
+         */
+
+        bool Utils::isEmail(const char * str) {
+
+            std::regex regex("[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*");
+  
+            return std::regex_match(str ? str : "", regex);
+
+        }
+
+
+    }
 
 }

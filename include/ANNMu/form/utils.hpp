@@ -24,34 +24,46 @@
  *
  */
 
-#include <iostream>
+#ifndef ANNMu_FORM_UTILS_HPP
+#define ANNMu_FORM_UTILS_HPP
 
-#include <tests/http/request.hpp>
-#include <tests/http/response.hpp>
-#include <tests/http/client.hpp>
-#include <tests/config/config.hpp>
-#include <tests/log/log.hpp>
-#include <tests/form/simple.hpp>
-#include <tests/form/utils.hpp>
-#include <tests/routing/router.hpp>
-#include <tests/url/coding.hpp>
-#include <tests/url/migration.hpp>
-#include <tests/url/url.hpp>
+#include <regex>
 
-int main(void) {
 
-    tests::http::Request::run();
-    tests::http::Response::run();
-    tests::http::Client::run();
-    tests::config::Config::run();
-    tests::log::Log::run();
-    tests::form::Simple::run();
-    tests::form::Utils::run();
-    tests::routing::Router::run();
-    tests::url::Coding::run();
-    tests::url::Migration::run();
-    tests::url::Url::run();
+using namespace std;
 
-    return 0;
+
+namespace annmu {
+
+    namespace form {
+
+        class Utils {
+
+            public:
+                
+                /**
+                 * 
+                 * @brief The static method checks if the given string is email.
+                 * 
+                 * @link https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address
+                 * @param str It's the pointer to the array that contains the
+                 * string
+                 * 
+                 * @return The method returns true if the string is email;
+                 * otherwise the method returns false.
+                 * 
+                 */
+
+                static bool isEmail(
+                    const char * str
+                );
+
+
+        };
+
+
+    }
 
 }
+
+#endif

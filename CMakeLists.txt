@@ -33,6 +33,7 @@ set(
     ./src/ANNMu/mvc/controller.cpp
     ./src/ANNMu/form/simple.cpp
     ./src/ANNMu/form/token.cpp
+    ./src/ANNMu/form/utils.cpp
 )
 
 set(
@@ -55,6 +56,7 @@ set(
     ./src/tests/config/config.cpp
     ./src/tests/log/log.cpp
     ./src/tests/form/simple.cpp
+    ./src/tests/form/utils.cpp
     ./src/tests/routing/router.cpp
     ./src/tests/url/coding.cpp
     ./src/tests/url/migration.cpp
