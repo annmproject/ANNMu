@@ -130,8 +130,7 @@ namespace annmu {
                 return;
             }
 
-            std::string cookie;
-
+            this->mCookies += "Set-Cookie: ";
             this->mCookies += annmu::url::Coding::encode(name);
             this->mCookies += "=";
             this->mCookies += annmu::url::Coding::encode(value);

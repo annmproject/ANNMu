@@ -11,7 +11,6 @@ set(CMAKE_CXX_FLAGS "-O3")
 
 include_directories("/Applications/MAMP/htdocs/ANNMu/include")
 include_directories("/usr/local/mysql-connector-c++/include/jdbc")
-include_directories("/usr/local/include")
 
 link_directories("/usr/local/mysql-connector-c++/lib64")
 
