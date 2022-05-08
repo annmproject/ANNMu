@@ -164,15 +164,8 @@ namespace annmu {
             
             std::size_t pos;
 
-            if((pos = this->mCookies.find(annmu::url::Coding::encode(name) + "=")) != std::string::npos) {
-                if(pos == 0) {
-                    return true;
-                }
-                if(pos > 0) {
-                    if(this->mCookies[pos - 1] == '\n') {
-                        return true;
-                    }
-                }
+            if((pos = this->mCookies.find("Set-Cookie: " + annmu::url::Coding::encode(name) + "=")) != std::string::npos) {
+                return true;
             }
 
             return false;

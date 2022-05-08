@@ -693,7 +693,7 @@ namespace tests {
 
                 response.setCookie("key", "value", 3600, "/", "localhost", 0, 0);
 
-                if(strcmp(response.getCookiesData(), "key=value; Max-Age=3600; Domain=localhost; Path=%2F\r\n") == 0) {
+                if(strcmp(response.getCookiesData(), "Set-Cookie: key=value; Max-Age=3600; Domain=localhost; Path=%2F\r\n") == 0) {
                     return true;
                 }
 
@@ -722,7 +722,7 @@ namespace tests {
                 response.setCookie("key", "value", 3600, "/", "localhost", 0, 0);
                 response.setCookie("key1", "value", 3600, "/", "localhost", 1, 1);
 
-                if(strcmp(response.getCookiesData(), "key=value; Max-Age=3600; Domain=localhost; Path=%2F\r\nkey1=value; Max-Age=3600; Domain=localhost; Path=%2F; Secure; HttpOnly\r\n") == 0) {
+                if(strcmp(response.getCookiesData(), "Set-Cookie: key=value; Max-Age=3600; Domain=localhost; Path=%2F\r\nSet-Cookie: key1=value; Max-Age=3600; Domain=localhost; Path=%2F; Secure; HttpOnly\r\n") == 0) {
                     return true;
                 }
 
